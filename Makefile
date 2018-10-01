@@ -1,4 +1,4 @@
-CFLAGS = -std=c++11 -g3 -Wall -Wpedantic -Werror -fno-exceptions
+CFLAGS = -std=c++11 -g3 -Wall -Wextra -Wpedantic -Werror -fno-exceptions
 LDLIBS = -lSDL
 
 all: unnamed

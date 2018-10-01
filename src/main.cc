@@ -2,7 +2,7 @@
 
 #include <cstdio>
 
-int main(int argc, char const *argv[]) {
+int main(int, char **) {
     Game game;
     return 0;
 }
