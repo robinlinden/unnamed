@@ -1,6 +1,8 @@
+#include "game.h"
+
 #include <cstdio>
 
 int main(int argc, char const *argv[]) {
-    printf("Hello.\n");
+    Game game;
     return 0;
 }

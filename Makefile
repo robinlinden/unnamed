@@ -1,9 +1,13 @@
-CFLAGS = -std=c++11 -g3 -Wall -Wpedantic -Werror
+CFLAGS = -std=c++11 -g3 -Wall -Wpedantic -Werror -fno-exceptions
+LDLIBS = -lSDL
 
 all: unnamed
 
-unnamed: src/main.o
-	$(CC) $(CFLAGS) -o $@ $^
+unnamed: src/**.cc
+	$(CC) $(CFLAGS) $^ $(LDLIBS) -o $@
+
+run: unnamed
+	./$^
 
 clean:
-	$(RM) *.o unnamed
+	$(RM) **/*.o unnamed
