@@ -2,7 +2,7 @@ CFLAGS = -std=c++11 -g3 -Wall -Wpedantic -Werror
 
 all: unnamed
 
-unnamed: main.o
+unnamed: src/main.o
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
