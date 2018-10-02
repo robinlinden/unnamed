@@ -1,28 +1,13 @@
 #include "game.h"
 
+#include "graphics.h"
+
 #include <SDL2/SDL.h>
 
 #include <algorithm>
 
-namespace {
-// TODO: Move.
-SDL_Window *window;
-SDL_Renderer *renderer;
-static const uint16_t kWidth = 640;
-static const uint16_t kHeight = 480;
-}
-
 Game::Game() {
     SDL_Init(SDL_INIT_EVERYTHING);
-    window = SDL_CreateWindow(
-            "unnamed2",
-            SDL_WINDOWPOS_UNDEFINED,
-            SDL_WINDOWPOS_UNDEFINED,
-            kWidth,
-            kHeight,
-            SDL_WINDOW_RESIZABLE);
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-    SDL_RenderSetLogicalSize(renderer, kWidth, kHeight);
     eventLoop();
 }
 
@@ -31,6 +16,8 @@ Game::~Game() {
 }
 
 void Game::eventLoop() {
+    Graphics graphics;
+
     bool running = true;
     while (running) {
         const uint32_t start_time_ms = SDL_GetTicks();
